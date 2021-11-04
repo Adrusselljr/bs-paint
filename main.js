@@ -47,6 +47,8 @@ while (count <= gridWidth * gridWidth) {
 const palette = document.querySelector(".palette")
 const canvas = document.querySelector(".canvas")
 
+let isMouseDown = false
+
 /************ EVENT LISTENER FUNCTIONS ************/
 
 palette.addEventListener("click", e => {
@@ -57,6 +59,21 @@ palette.addEventListener("click", e => {
 canvas.addEventListener("click", e => {
   const brush = document.querySelector(".current-brush")
   e.target.className = `${e.target.classList[0]} ${brush.classList[1]}`
+})
+
+canvas.addEventListener("mouseover", e => {
+  const brush = document.querySelector(".current-brush")
+  if(isMouseDown === true) {
+    e.target.className = `${e.target.classList[0]} ${brush.classList[1]}`
+  }
+})
+
+document.addEventListener("mouseup", () => {
+  isMouseDown = false
+})
+
+document.addEventListener("mousedown", () => {
+  isMouseDown = true
 })
 
 /************ WIRING IT ALL TOGETHER **************/
