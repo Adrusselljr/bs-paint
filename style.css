@@ -1,15 +1,21 @@
 .app {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 500px;
 }
 
 .headings {
   display: flex;
+  flex-direction: column;
 }
 
 .brush-selection {
   height: 70px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .paint {
@@ -51,21 +57,21 @@
 }
 
 .color-1 {
-
+  background-color: red;
 }
 
 .color-2 {
-
+  background-color: green;
 }
 
 .color-3 {
-
+  background-color: blue;
 }
 
 .color-4 {
-
+  background-color: purple;
 }
 
 .color-5 {
-
+  background-color: orange;
 }

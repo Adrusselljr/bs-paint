@@ -42,30 +42,24 @@ while (count <= gridWidth * gridWidth) {
 // ALSO.
 // You do not have to follow the sections below. If you're doing your functions inline, it doesn't make a lot of sense to separate the event listener functions from their wiring!
 
-/***********
- * QUERIES *
-***********/
+/************ QUERIES *****************************/
 
-// Add queries for all your squares, palette colors, and brush here.
-// (Note the singular or plural used in that sentence!)
+const palette = document.querySelector(".palette")
+const canvas = document.querySelector(".canvas")
 
+/************ EVENT LISTENER FUNCTIONS ************/
 
+palette.addEventListener("click", e => {
+  const brush = document.querySelector(".current-brush")
+  brush.className = `${brush.classList[0]} ${e.target.classList[1]}`
+})
 
-/****************************
- * EVENT LISTENER FUNCTIONS *
-****************************/
+canvas.addEventListener("click", e => {
+  const brush = document.querySelector(".current-brush")
+  e.target.className = `${e.target.classList[0]} ${brush.classList[1]}`
+})
 
-// Now add some functions to handle clicking one particular square
-// and clicking one particular palette color. You can leave them
-// empty at first, though a console.log just to know they're being
-// run as event listeners (after the next step is set up) isn't a
-// bad idea for testing purposes.
-
-
-
-/**************************
- * WIRING IT ALL TOGETHER *
-**************************/
+/************ WIRING IT ALL TOGETHER **************/
 
 // Now: wiring up our event listeners to our html node elements.
 // You'll need to add the appropriate event listener for each
